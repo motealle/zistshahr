@@ -1,0 +1,32 @@
+# ZISTSHAHR — English Immersive Exhibition
+
+A research-led, interactive exhibition website for **Zistshahr (زیست‌شهر نوین مولد)**, the proposed Productive Living City. The project explores how neighborhood form, productive homes, work, community, family, ecology and local institutions could be designed together—not merely how to render greener buildings.
+
+## Live addresses
+
+- Latest exhibition: https://zistshahr.com/en/
+- All immutable editions: https://zistshahr.com/en/t/
+- V01: https://zistshahr.com/en/t/01/
+- V02: https://zistshahr.com/en/t/02/
+- Original Persian project research: https://zistshahr.com/
+
+## Architecture
+
+Plain static HTML, CSS and JavaScript, no mandatory build step. Three.js is loaded as an ES module (`cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js`) and builds a procedural **conceptual**, not built, island of productive homes, water, streets, workshops, gardens and shared civic space. There is a self-contained local vector city fallback if the remote module or WebGL fails. Thin English type uses Manrope/DM Mono/Cormorant Garamond with system font fallbacks.
+
+- `site/index.html` and `site/assets/`: latest edition, served at `/en/`.
+- `site/t/01/`, `site/t/02/`: immutable archives and self-contained assets.
+- `site/t/index.html`: version-selector page.
+- `sources/original/`: the user's original research attachments, without edits.
+- `sources/*.md`: structured summaries and provenance notes.
+- `docs/HANDOFF.md`, `docs/BACKLOG.md`: agent handoff and canonical status.
+- `AGENTS.md`: constraints for successive coding agents.
+- `.github/workflows/deploy-exhibition.yml`: deploys `site/` via FTPS using repository secrets.
+
+## Development / checks
+
+Use a static local server when the environment allows it (`python3 -m http.server 8000 -d site`). Run `node --check site/t/02/assets/app.js` and `node --check site/assets/app.js`. Manually test two tracks, active timeline, keyboard arrows, autoplay/pause, modal escape/close, theme persistence and mobile view. Review release checklist in `docs/HANDOFF.md`. Deployment state is tracked by the FTP Action and `dangerous-clean-slate: false`.
+
+## Exhibition integrity
+
+Prototypes are **research-based thought experiments**; any graphics, modeled districts and system concepts are illustrations, not proof of implementation or site-specific engineering feasibility. See `sources/README.md` for sources. Zistshahr's social-theory grid is a proposed normative/analytic framework, not a scientific consensus or exhaustive model of all societies.

@@ -3,7 +3,7 @@
  * 2026. Research-grounded narrative; the Three.js environment is an original
  * conceptual visualization and must not be mistaken for a built masterplan.
  */
-const chapters = [
+const cityChapters = [
   {
     label:'PROLOGUE / A DIFFERENT POSSIBILITY', kicker:'A VISION IN EIGHT MOVEMENTS',
     title:'What if a city<br>could <em>give more</em><br>than it takes?',
@@ -77,6 +77,39 @@ const chapters = [
     action:'OPEN THE RESEARCH ATLAS', short:'The invitation', target:[47,43,47], look:[0,1,0], duration:26000
   }
 ];
+
+const theoryChapters = [
+  {label:'PROLOGUE / THE HUMAN QUESTION',kicker:'THE IDEAS THAT MAKE A CITY',title:'Before the blueprint,<br><em>a vision of humanity.</em>',description:'A city is never only a physical arrangement. It is a proposal about human life—what people can do, how they relate, and who they can become.',insight:'THE SPATIAL FUTURE BEGINS WITH A SOCIAL QUESTION.',note:'The theoretical stream interprets the project’s own proposed framework; its claims are research propositions to examine, not universal laws.',source:'https://zistshahr.com/6247/',sceneTitle:'FOUNDATIONS / THE SOCIAL PURPOSE OF SPACE',action:'FOLLOW THE IDEAS',short:'The human question',target:[38,35,43],look:[0,1,0],duration:21500},
+  {label:'01 / SPACE AND HUMAN AGENCY',kicker:'PEOPLE SHAPE THEIR CONDITIONS',title:'We shape our cities.<br>Then our cities<br><em>shape our choices.</em>',description:'Urban environments do not determine human behavior. Yet they can make care, production, belonging and participation more—or less—possible.',insight:'ARCHITECTURE MAKES SOME FUTURES EASIER TO LIVE.',note:'The recent Zistshahr essays distinguish people who act within conditions from people who help design those conditions.',source:'https://zistshahr.com/6278/',sceneTitle:'THE SOCIAL FIELD / DESIGN AS HUMAN AGENCY',action:'EXAMINE POWER',short:'Human agency',target:[27,23,30],look:[0,1,0],duration:21000},
+  {label:'02 / DOMINATION',kicker:'THOMAS HOBBES · AN INTERPRETIVE REFERENCE',title:'What holds a<br>society <em>together</em><br>when trust fails?',description:'One model foregrounds power, hierarchy and the fear of sanction. Hobbes offers a philosophical entry point into why common authority may be considered necessary for social order.',insight:'POWER CAN PRODUCE ORDER. WHAT SORT OF LIFE DOES IT ENABLE?',note:'The supplied matrix labels this a society of domination; Hobbes’s philosophical position is more nuanced than the typology alone.',source:'https://zistshahr.com/6264/',sceneTitle:'SOCIAL ORDER / THE LOGIC OF POWER',action:'TURN TO THE MARKET',short:'The logic of power',target:[17,18,22],look:[-5,0,4],duration:25000},
+  {label:'03 / MARKET SOCIETY',kicker:'ADAM SMITH · DECENTRALIZED EXCHANGE',title:'Can private<br>initiative yield<br><em>public benefit?</em>',description:'The market model examines competition, exchange and wealth creation as coordinating forces. Smith’s “invisible hand” illuminates one version of the tension between individual purposes and collective outcomes.',insight:'EFFICIENCY IS NOT THE ONLY MEASURE OF A GOOD CITY.',note:'The economic model in the supplied matrix is an analytical simplification; it must be weighed against ownership, access, small enterprises and social outcomes.',source:'https://zistshahr.com/6264/',sceneTitle:'SOCIAL ORDER / EXCHANGE & OPPORTUNITY',action:'QUESTION THE TENSION',short:'Market society',target:[16,16,28],look:[4,1,-5],duration:24500},
+  {label:'04 / THE SOCIAL PARADOX',kicker:'IMMANUEL KANT · UNSOCIAL SOCIABILITY',title:'We need others.<br>We compete with<br><em>those we need.</em>',description:'Kant considered the tensions between sociability and rivalry as drivers of human development. The challenge for urbanism is not to erase every tension, but to design conditions for constructive relations.',insight:'A SOCIAL THEORY MUST CONFRONT HUMAN CONTRADICTION.',note:'Kant is presented here as a critical philosophical counterpoint, not as a simple founder of any one of the four models.',source:'https://zistshahr.com/6278/',sceneTitle:'HUMAN NATURE / THE CREATIVE SOCIAL TENSION',action:'EXPLORE COOPERATION',short:'The social paradox',target:[22,24,24],look:[0,0,0],duration:26000},
+  {label:'05 / SELF-ORGANIZATION',kicker:'COOPERATIVE ASSEMBLIES AND LOCAL INITIATIVE',title:'What happens<br>when communities<br><em>organize themselves?</em>',description:'The anarchist model in the supplied framework imagines order emerging through cooperation and smaller assemblies. It raises questions about autonomy, scale and the institutions of mutual responsibility.',insight:'SMALL-SCALE COOPERATION IS AN URBAN DESIGN POSSIBILITY.',note:'A framework for comparison—not a claim that any existing settlement fully exemplifies this ideal type.',source:'https://zistshahr.com/6278/',sceneTitle:'SOCIAL ORDER / COOPERATION & SELF-GOVERNANCE',action:'DISCOVER THE FOURTH VISION',short:'Cooperation',target:[13,16,19],look:[5,0,3],duration:22000},
+  {label:'06 / HUMAN DIGNITY',kicker:'THE PROPHETIC UMMAH · THE PROJECT’S PROPOSED IDEAL',title:'Could a city<br>be organized<br>around <em>care?</em>',description:'In Zistshahr’s proposed fourth model, human dignity, other-regarding affection and the capacity for service orient the social vision. Spatial justice, neighborhood solidarity and productive homes become design questions.',insight:'THE AIM IS NOT MERELY A GREENER CITY, BUT A MORE HUMANE ONE.',note:'This is the project’s normative framework, not an empirical conclusion that one model outperforms all others across settings.',source:'https://zistshahr.com/6264/',sceneTitle:'SOCIAL PURPOSE / DIGNITY, CARE & SERVICE',action:'CONNECT THEORY TO SPACE',short:'The dignity question',target:[11,15,21],look:[0,0,0],duration:26000},
+  {label:'07 / FROM THEORY TO SPACE',kicker:'FOUR SOCIAL LOGICS · ONE OPEN RESEARCH AGENDA',title:'From what we value<br>to <em>what we build.</em>',description:'The test is practical: can the arrangement of homes, courtyards, land, services, enterprise and ecological systems make the desired social life more attainable?',insight:'PROPOSE · MODEL · PROTOTYPE · MEASURE · LEARN.',note:'The two journeys belong together: a human vision and its physical design must be iterated, tested and revised in relation to real communities.',source:'https://zistshahr.com/6247/',sceneTitle:'FROM SOCIAL THEORY TO LIVING CITY',action:'RETURN TO THE LIVING CITY',short:'Ideas into form',target:[49,42,47],look:[0,1,0],duration:28000}
+];
+let chapters = cityChapters;
+let currentTrack = 'city';
+let pace = 1;
+let applyWorldTheme = () => {};
+function applyTheme(next){
+  const theme = next === 'light' ? 'light' : 'dark';
+  document.documentElement.dataset.theme=theme;
+  const button=document.getElementById('themeToggle');
+  if(button){button.setAttribute('aria-label',theme==='light'?'Switch to dark appearance':'Switch to light appearance');button.querySelector('.theme-icon').textContent=theme==='light'?'◐':'☼';button.querySelector('.theme-label').textContent=theme==='light'?'DARK':'LIGHT';}
+  try{localStorage.setItem('zistshahr-theme',theme)}catch(e){}
+  applyWorldTheme(theme);
+}
+function switchTrack(next,index=0){
+  if(!['city','theory'].includes(next))return;
+  currentTrack=next;chapters=next==='city'?cityChapters:theoryChapters;
+  document.documentElement.dataset.track=next;
+  for(const [id,selected] of [['cityTrack',next==='city'],['theoryTrack',next==='theory']]){const el=document.getElementById(id);el.classList.toggle('active',selected);el.setAttribute('aria-selected',String(selected));}
+  document.getElementById('journeyTitle').textContent=next==='city'?'THE LIVING CITY':'THE FOUNDATIONS';
+  document.getElementById('journeyStamp').querySelector('small').textContent=next==='city'?'RESEARCH-LED IMMERSIVE EXPERIENCE':'THE IDEAS THAT SHAPE THE CITY';
+  buildTimeline();goTo(index,true);
+}
+
 const $ = id => document.getElementById(id);
 let active = 0, autoplay = true, timer, typingFrame, lastFocus, modalWasPlaying = false;
 let reducedMotion = !!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -103,7 +136,7 @@ function buildTimeline(){
   dom.timeline.replaceChildren();
   chapters.forEach((c,i)=>{const button=document.createElement('button');button.type='button';button.className='timeline-item';button.setAttribute('aria-label',`Go to chapter ${i+1}: ${c.short}`);button.title=`${String(i+1).padStart(2,'0')} · ${c.short}`;button.innerHTML='<span></span>';button.addEventListener('click',()=>goTo(i,true));dom.timeline.appendChild(button);});
   dom.atlasChapters.replaceChildren();
-  chapters.forEach((c,i)=>{const button=document.createElement('button');button.type='button';button.className='atlas-chapter';button.innerHTML=`<small>${String(i+1).padStart(2,'0')} / 08</small><strong>${c.short}</strong><span>↗</span>`;button.addEventListener('click',()=>{closeAtlas();goTo(i,true);});dom.atlasChapters.appendChild(button);});
+  chapters.forEach((c,i)=>{const button=document.createElement('button');button.type='button';button.className='atlas-chapter';button.innerHTML=`<small>${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}</small><strong>${c.short}</strong><span>↗</span>`;button.addEventListener('click',()=>{closeAtlas();goTo(i,true);});dom.atlasChapters.appendChild(button);});
 }
 let setCameraChapter = ()=>{};
 function goTo(index, fromUser=false){
@@ -112,22 +145,29 @@ function goTo(index, fromUser=false){
   const c=chapters[active];
   dom.story.classList.remove('is-changing');void dom.story.offsetWidth;dom.story.classList.add('is-changing');
   dom.label.textContent=c.label;dom.kicker.textContent=c.kicker;dom.description.textContent=c.description;dom.insight.textContent=c.insight;
-  dom.action.textContent=c.action;dom.hint.textContent=active===0?'AN IMMERSIVE, SELF-GUIDED EXPERIENCE':active===chapters.length-1?'READ THE ORIGINAL PROJECT MATERIALS':'AUTO-NARRATIVE · FULLY NAVIGABLE';
-  dom.note.textContent=c.note;dom.noteCounter.textContent=`${String(active+1).padStart(3,'0')} / 008`;
-  dom.noteLink.href=c.source;dom.sceneCaptionTitle.textContent=c.sceneTitle;dom.number.textContent=String(active+1).padStart(2,'0');
+  dom.action.textContent=c.action;dom.hint.textContent=active===0?'AN IMMERSIVE, SELF-GUIDED EXPERIENCE':active===chapters.length-1?(currentTrack==='theory'?'SWITCH TO THE LIVING CITY':'READ THE ORIGINAL PROJECT MATERIALS'):'AUTO-NARRATIVE · FULLY NAVIGABLE';
+  dom.note.textContent=c.note;dom.noteCounter.textContent=`${String(active+1).padStart(3,'0')} / ${String(chapters.length).padStart(3,'0')}`;
+  dom.noteLink.href=c.source;dom.sceneCaptionTitle.textContent=c.sceneTitle;dom.number.textContent=String(active+1).padStart(2,'0');document.getElementById('chapterRange').textContent=`01 — ${String(chapters.length).padStart(2,'0')}`;document.querySelector('.player-counter span').textContent=` / ${String(chapters.length).padStart(2,'0')}`;
   [...dom.timeline.children].forEach((el,i)=>{el.classList.toggle('active',i===active);el.classList.toggle('completed',i<active);el.setAttribute('aria-current',i===active?'step':'false');});
-  $('announcement').textContent=`Chapter ${active+1} of eight: ${c.short}. ${c.description}`;
+  $('announcement').textContent=`Chapter ${active+1} of ${chapters.length}: ${c.short}. ${c.description}`;
   setCameraChapter(active);
   textTyping(c.title,()=>{});
   scheduleChapter();
 }
-function scheduleChapter(){clearTimeout(timer);if(autoplay&&!dom.atlas.open){timer=setTimeout(()=>goTo(active+1),chapters[active].duration);}}
+function scheduleChapter(){clearTimeout(timer);if(autoplay&&!dom.atlas.open){timer=setTimeout(()=>goTo(active+1),Math.round(chapters[active].duration*pace));}}
 function setAutoplay(value){autoplay=!!value;dom.playIcon.textContent=autoplay?'Ⅱ':'▶';$('playPause').setAttribute('aria-label',autoplay?'Pause automatic chapters':'Resume automatic chapters');dom.mode.textContent=autoplay?'AUTOPLAY ON':'AUTOPLAY PAUSED';scheduleChapter();}
 function next(){goTo(active+1,true)}function previous(){goTo(active-1,true)}
 function openAtlas(){modalWasPlaying=autoplay;clearTimeout(timer);lastFocus=document.activeElement;dom.atlas.showModal();$('openAtlas').setAttribute('aria-expanded','true');}
 function closeAtlas(){dom.atlas.close();$('openAtlas').setAttribute('aria-expanded','false');if(modalWasPlaying&&autoplay)scheduleChapter();lastFocus?.focus?.();}
+$('themeToggle').addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light'));
+$('cityTrack').addEventListener('click',()=>switchTrack('city'));
+$('theoryTrack').addEventListener('click',()=>switchTrack('theory'));
+$('atlasCity').addEventListener('click',()=>{closeAtlas();switchTrack('city')});
+$('atlasTheory').addEventListener('click',()=>{closeAtlas();switchTrack('theory')});
+$('openMatrix').addEventListener('click',()=>{openAtlas();document.getElementById('foundationMatrix').scrollIntoView({behavior:'smooth',block:'start'})});
+$('paceSelect').addEventListener('change',e=>{pace=Number(e.target.value)||1;scheduleChapter()});
 $('previous').addEventListener('click',previous);$('next').addEventListener('click',next);$('playPause').addEventListener('click',()=>setAutoplay(!autoplay));
-$('discoverButton').addEventListener('click',()=>active===chapters.length-1?openAtlas():next());
+$('discoverButton').addEventListener('click',()=>active===chapters.length-1?(currentTrack==='theory'?switchTrack('city'):openAtlas()):next());
 $('openAtlas').addEventListener('click',openAtlas);$('toggleDetails').addEventListener('click',openAtlas);$('closeAtlas').addEventListener('click',closeAtlas);
 dom.atlas.addEventListener('click',(e)=>{if(e.target===dom.atlas)closeAtlas();});
 dom.atlas.addEventListener('close',()=>{ $('openAtlas').setAttribute('aria-expanded','false');scheduleChapter(); });
@@ -160,6 +200,22 @@ async function launchWorld(){
     const rim=new THREE.DirectionalLight(0x68d1b2,1.8);rim.position.set(27,21,-38);scene.add(rim);
     const root=new THREE.Group();scene.add(root);
     const mats={ground:new THREE.MeshStandardMaterial({color:0x193e35,roughness:1}),road:new THREE.MeshStandardMaterial({color:0x36544a,roughness:1}),soil:new THREE.MeshStandardMaterial({color:0x525644,roughness:1}),garden:new THREE.MeshStandardMaterial({color:0x3d7960,roughness:1}),leaf:new THREE.MeshStandardMaterial({color:0x7eb99b,roughness:.95}),leaf2:new THREE.MeshStandardMaterial({color:0x335e4c,roughness:1}),light:new THREE.MeshStandardMaterial({color:0xc5d5a3,emissive:0x678e5d,emissiveIntensity:.2,roughness:.7}),house:new THREE.MeshStandardMaterial({color:0xe2c9a0,roughness:.94}),house2:new THREE.MeshStandardMaterial({color:0xb4c5a9,roughness:.95}),house3:new THREE.MeshStandardMaterial({color:0xbd9976,roughness:.94}),roof:new THREE.MeshStandardMaterial({color:0x8b6251,roughness:.9}),roof2:new THREE.MeshStandardMaterial({color:0xd3b187,roughness:.9}),glass:new THREE.MeshStandardMaterial({color:0x8fddc8,metalness:.13,roughness:.22,transparent:true,opacity:.7,emissive:0x1c5f59,emissiveIntensity:.3}),water:new THREE.MeshPhysicalMaterial({color:0x2aa79d,roughness:.18,metalness:.2,transparent:true,opacity:.85,emissive:0x00605c,emissiveIntensity:.15}),path:new THREE.LineBasicMaterial({color:0x9ec5a2,transparent:true,opacity:.22})};
+    applyWorldTheme=(mode)=>{
+      const light=mode==='light';
+      scene.background.setHex(light?0xe9f2e9:0x071d1c);
+      scene.fog.color.setHex(light?0xe9f2e9:0x071d1c);
+      renderer.toneMappingExposure=light?1.18:1.65;
+      mats.ground.color.setHex(light?0x7d9e83:0x193e35);
+      mats.road.color.setHex(light?0x9aa99c:0x36544a);
+      mats.garden.color.setHex(light?0x6ca77a:0x3d7960);
+      mats.soil.color.setHex(light?0x9c9b7d:0x525644);
+      mats.water.color.setHex(light?0x348f97:0x2aa79d);
+      mats.house.color.setHex(light?0xf2e7cf:0xe2c9a0);
+      mats.house2.color.setHex(light?0xd9e0ca:0xb4c5a9);
+      mats.house3.color.setHex(light?0xdab99c:0xbd9976);
+      sun.intensity=light?3.0:3.3;hemi.intensity=light?3.0:2.25;
+    };
+    applyWorldTheme(document.documentElement.dataset.theme||'dark');
     function mesh(geometry,material,pos,group=root){const m=new THREE.Mesh(geometry,material);m.position.set(...pos);group.add(m);return m;}
     function box(w,h,d,mat,x,y,z,g=root){return mesh(new THREE.BoxGeometry(w,h,d),mat,[x,y,z],g);}
     function disc(r,mat,x,y,z,g=root){const m=mesh(new THREE.CylinderGeometry(r,r,.055,32),mat,[x,y,z],g);return m;}
@@ -239,8 +295,7 @@ async function launchWorld(){
     const particlePos=[];for(let i=0;i<430;i++){let a=rand()*Math.PI*2,r=13+rand()*90;particlePos.push(Math.cos(a)*r,4+rand()*60,Math.sin(a)*r);}
     const particleGeo=new THREE.BufferGeometry();particleGeo.setAttribute('position',new THREE.Float32BufferAttribute(particlePos,3));
     const particles=new THREE.Points(particleGeo,new THREE.PointsMaterial({color:0xc7d8a8,size:.13,transparent:true,opacity:.34,sizeAttenuation:true}));scene.add(particles);
-    const camStates=chapters.map(c=>({position:new THREE.Vector3(...c.target),focus:new THREE.Vector3(...c.look)}));
-    setCameraChapter=(i)=>{targetPos.copy(camStates[i].position);targetFocus.copy(camStates[i].focus);};
+    setCameraChapter=(i)=>{const c=chapters[i];targetPos.set(...c.target);targetFocus.set(...c.look);};setCameraChapter(active);
     let px=0,py=0;
     window.addEventListener('pointermove',e=>{px=(e.clientX/window.innerWidth-.5);py=(e.clientY/window.innerHeight-.5);},{passive:true});
     const clock=new THREE.Clock();let frame=0,raf;
@@ -260,4 +315,4 @@ async function launchWorld(){
   }catch(err){console.warn('3D visualization unavailable; the static exhibition view remains accessible.',err);}
   finally{load.classList.remove('visible');}
 }
-buildTimeline();goTo(0);launchWorld();
+document.documentElement.dataset.track='city';let storedTheme='dark';try{storedTheme=localStorage.getItem('zistshahr-theme')||'dark'}catch(e){}applyTheme(storedTheme);buildTimeline();goTo(0);launchWorld();
