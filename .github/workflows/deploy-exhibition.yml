@@ -1,0 +1,39 @@
+name: Deploy Zistshahr English exhibition
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/deploy-exhibition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: zistshahr-production-ftp
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout release
+        uses: actions/checkout@v4
+      - name: Upload exhibition site to FTP root (mapped to /en)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./site/
+          server-dir: ./
+          state-name: .ftp-deploy-zistshahr-exhibition.json
+          dangerous-clean-slate: false
+      - name: Verify archive and live release
+        shell: bash
+        run: |
+          set -euo pipefail
+          for address in 'https://zistshahr.com/en/' 'https://zistshahr.com/en/t/01/' 'https://zistshahr.com/en/t/'; do
+            echo "Check $address"
+            curl --retry 4 --retry-delay 5 --max-time 40 --fail --silent --show-error --location "$address" | grep -qi 'ZISTSHAHR'
+          done
