@@ -58,3 +58,13 @@ Status as of 2026-11-07. Each new release is immutable; never retrofit old snaps
 - [ ] Test real Three.js scene on midrange Android and exhibition laptop with internet, including offline fallback; independent live root screenshot.
 - [ ] Confirm researcher review of concept land-area figure, original architecture and English translations; avoid suggesting implementation has occurred.
 - [x] Full 9 MB original `Presentation1.pptx` content archived **losslessly in GitHub as eight restorable Base64 chunks** at `sources/original/Presentation1.pptx.b64parts/`; restoration verified against original SHA-256, with one-file original also preserved in ChatGPT Library.
+
+
+## V04 — The Living Atlas / 2026-11-08
+- Complete interface redesign on `main`; no other branch existed at task start. New immutable `site/t/04/index.html`, byte-identical latest root; newest-first archive entry. Editions 01–03 untouched.
+- Paper/terracotta light and forest/ivory dark themes; new inline isometric illustration, real overhead SVG plan, selectable home/commons/ecology destinations. Optional procedural Three.js garden city retained with wider cameras and context-loss fallback.
+- Equally visible City and Foundations lenses: 8 chapters each; Foundations receives its own interactive diagram, and the full matrix, source links, classical references and Open Science material remain in the atlas. No evidence of real-world implementation is implied.
+- User-paced entry, opt-in guided tour, pace control, keyboard arrows/Space, native modal focus/Escape, persisted theme, reduced-motion handling. Type-on text reserves its full layout before animation to prevent moving click targets.
+- Validation: `node scripts/check-release.mjs 04`; browser interaction checks across 390, 360 and 1440 px iframe viewports, all 16 chapters in each, Escape close, plan view, play/pause, light/dark, and no horizontal overflow. See `docs/QA-v04.md`.
+- Deployment: pending Actions verification; update this line after the actual run completes.
+- Limits: cloud browser displayed inline SVG fallback; real GPU/Three.js rendering and physical Android/iPhone/exhibition-network QA remain unverified. CDN failure does not block content. Next revision must be 05.

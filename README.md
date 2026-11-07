@@ -8,13 +8,14 @@ A research-led, interactive exhibition website for **Zistshahr (زیست‌شه�
 - All immutable editions: https://zistshahr.com/en/t/
 - V01: https://zistshahr.com/en/t/01/
 - V02: https://zistshahr.com/en/t/02/\n- V03: https://zistshahr.com/en/t/03/
+- V04: https://zistshahr.com/en/t/04/
 - Original Persian project research: https://zistshahr.com/
 
 ## Architecture
 
 Plain static HTML, CSS and JavaScript, no mandatory build step. Three.js is loaded as an ES module (`cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js`) and builds a procedural **conceptual**, not built, island of productive homes, water, streets, workshops, gardens and shared civic space. There is a self-contained local vector city fallback if the remote module or WebGL fails. Thin English type uses Manrope/DM Mono/Cormorant Garamond with system font fallbacks.
 
-- `site/index.html`: latest V03 **self-contained** edition, served at `/en/`; old assets in `site/assets/` remain for earlier versions but are not loaded by V03.
+- `site/index.html`: latest V04 **self-contained** edition, served at `/en/`; old assets in `site/assets/` remain for earlier versions but are not loaded by V04.
 - `site/t/01/`, `site/t/02/`, `site/t/03/`: immutable archives. V03 is one HTML file.
 - `site/t/index.html`: version-selector page.
 - `sources/original/`: original Word/Excel inputs plus `دانش آزاد.docx`; the larger original presentation is losslessly recoverable from eight archived Base64 parts in `sources/original/Presentation1.pptx.b64parts/` (and directly available as PPTX in Library).
@@ -33,3 +34,9 @@ Prototypes are **research-based thought experiments**; any graphics, modeled dis
 
 ## Edition 03 — single-file garden city (2026-11-07)
 Latest `https://zistshahr.com/en/` mirrors immutable `site/t/03/index.html`; previous editions stay at `/en/t/01/`, `/en/t/02/` and archive at `/en/t/`. V03 embeds all CSS, JavaScript, and SVG visual fallback in its HTML to avoid stale asset mismatches at the root. Three.js and Google Fonts are optional enhancements. Garden residences: one-storey, green ~800 m² conceptual plots with pools/trees; a distinct white contemporary mosque at the center, **not a Taj Mahal replica**. City and Foundations tracks, light/dark, guided chapters and research atlas remain available. See `AGENTS.md`, `docs/HANDOFF.md`.
+
+
+## Edition 04 — The Living Atlas (2026-11-08)
+A new editorial exhibition interface: warm paper/forest themes, large serif narratives, a selectable isometric garden-city illustration and overhead plan, a separate interactive four-logic foundations map, 16 chapters, guided playback, and the complete research atlas. One self-contained ~116 KB HTML; optional Three.js enhancement; all narrative and fallback graphics work without a CDN. Root mirrors `site/t/04/index.html`. Archives 01–03 remain unchanged.
+
+Run `node scripts/check-release.mjs 04` for source validation. See `docs/QA-v04.md` for browser evidence and limits.
