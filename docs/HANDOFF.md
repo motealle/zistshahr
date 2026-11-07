@@ -11,11 +11,11 @@ Reveal Zistshahr's English experience at a Turkey exhibition. Prioritize surpris
 | Version | State | Site path | Content |
 |---|---|---|---|
 | **01** | Released & FTP/live URL verified | `site/t/01/` → `/en/t/01/` | 8 chapters, procedural 3D, interactive controls, research atlas, 5 recent article links |
-| **02** | Build complete; publish/verify via Actions | `site/t/02/` → `/en/t/02/` | Two 8-chapter tracks, theory matrix and quotations, dark/light, pace, improved atlas, local procedural SVG fallback, responsive refinements |
-| latest | Must mirror V02 after publishing | `site/` → `/en/` | Version 02 |
+| **02** | Released & FTP/live URL checks verified | `site/t/02/` → `/en/t/02/` | Two 8-chapter tracks, theory matrix and quotations, dark/light, pace, improved atlas, local procedural SVG fallback, responsive refinements |
+| latest | V02 successfully mirrored | `site/` → `/en/` | Version 02 |
 | edition index | Updated for 01 and 02 | `site/t/index.html` → `/en/t/` | Clickable numbered cards |
 
-**V01 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42408262352. An initial V01 deployment succeeded on FTP but failed the HTTP check due to `curl | grep -q` closing early (SIGPIPE); the verification was fixed and rerun successfully. Never repeat this false-negative trap. Update V02 deployment record here once its run is confirmed.
+**V01 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42408262352. An initial V01 deployment succeeded on FTP but failed the HTTP check due to `curl | grep -q` closing early (SIGPIPE); the verification was fixed and rerun successfully. Never repeat this false-negative trap. **V02 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42409990074 (upload + all URL checks passed, 2026-11-07). Commit: `f79a9c7fddace292b734fbcc4448144c328e60a2`.
 
 ## Code design
 
@@ -45,7 +45,7 @@ Original project website `https://zistshahr.com/`, with focused five recent post
 
 ## Follow-on work
 
-1. Check the version 02 Action run is **successful** and independently verify `/en/`, `/en/t/`, `/en/t/01/`, `/en/t/02/` (Actions curl checks each).
+1. Completed: version 02 GitHub Action **successful**; automated public URL checks for `/en/`, `/en/t/`, `/en/t/01/`, `/en/t/02/` passed. Continue with on-device acceptance testing.
 2. Exhibition reliability: test with Chrome, Safari, Edge; Turkey/mobile devices; 3D WebGL and fallback performance at mid-range GPUs; font/CDN reachability in Turkey.
 3. Improve art direction in V03 based on client screenshots and feedback. Maintain immutable 01/02. Add 3D labeling, contextual camera tours, and stronger transitions only as performance permits.
 4. Work with researchers to validate selected English translations of culturally situated concepts (Ummah, brotherhood, prayer-centered neighborhood, benevolence-based work). Avoid universalizing the typology. Mark normative vs empirical material clearly.
