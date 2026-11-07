@@ -34,3 +34,10 @@ jobs:
           server-dir: ./
           state-name: .ftp-deploy-test-state.json
           dangerous-clean-slate: false
+
+      - name: Verify public test URL contains marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 3 --retry-delay 5 --max-time 30 https://zistshahr.com/en/ | grep --fixed-strings 'ZS-FTP-20261107'
+          echo 'FTP root -> https://zistshahr.com/en/ verified.'
