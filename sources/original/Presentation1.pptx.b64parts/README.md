@@ -9,7 +9,7 @@ Git blob SHA-1 for original binary: `962f3b863ab9a1ca4977b158f5f4999b9e3e1ddf`
 To reconstruct on macOS/Linux from this directory:
 
 ```bash
-cat part-*.b64 | tr -d '\\r\\n' | base64 -d > ../Presentation1.pptx
+cat part-*.b64 | base64 -d > ../Presentation1.pptx
 sha256sum ../Presentation1.pptx
 ```
 
