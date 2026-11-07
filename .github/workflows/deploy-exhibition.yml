@@ -35,5 +35,6 @@ jobs:
           set -euo pipefail
           for address in 'https://zistshahr.com/en/' 'https://zistshahr.com/en/t/01/' 'https://zistshahr.com/en/t/'; do
             echo "Check $address"
-            curl --retry 4 --retry-delay 5 --max-time 40 --fail --silent --show-error --location "$address" | grep -qi 'ZISTSHAHR'
+            curl --retry 4 --retry-delay 5 --max-time 40 --fail --silent --show-error --location "$address" -o /tmp/zistshahr-response.html
+            grep -qi 'ZISTSHAHR' /tmp/zistshahr-response.html
           done
