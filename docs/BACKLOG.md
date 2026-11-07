@@ -18,7 +18,7 @@ Status as of 2026-11-07. Each new release is immutable; never retrofit old snaps
 
 ## Immediate / P0
 
-- [ ] **Publish and verify V02 production** with full Actions log and all required URL checks. Update handoff with actual run ID.
+- [x] **Publish and verify V02 production**. FTPS upload and `/en/`, `/en/t/`, `/en/t/01/`, `/en/t/02/` URL checks all succeeded in [Actions run 42409990074](https://github.com/motealle/zistshahr/actions/runs/42409990074). Handoff updated.
 - [ ] **On-site exhibition QA**: Chrome/Edge/Safari, Turkish venue connectivity, fonts, true Three.js canvas, GPU memory, fullscreen/projector and fallback behavior.
 - [ ] **Researcher sign-off** on English matrix labels, roles, terminology, normative-vs-empirical caveats, original presentation title and transliteration.
 
