@@ -12,16 +12,16 @@ Reveal Zistshahr's English experience at a Turkey exhibition. Prioritize surpris
 |---|---|---|---|
 | **01** | Released & FTP/live URL verified | `site/t/01/` → `/en/t/01/` | 8 chapters, procedural 3D, interactive controls, research atlas, 5 recent article links |
 | **02** | Released & FTP/live URL checks verified | `site/t/02/` → `/en/t/02/` | Two 8-chapter tracks, theory matrix and quotations, dark/light, pace, improved atlas, local procedural SVG fallback, responsive refinements |
-| latest | V02 successfully mirrored | `site/` → `/en/` | Version 02 |
-| edition index | Updated for 01 and 02 | `site/t/index.html` → `/en/t/` | Clickable numbered cards |
+| **03** | Released and FTPS/HTTP checks verified | `site/t/03/` → `/en/t/03/` | Single HTML, garden homes, contemporary central white mosque, embedded fallback, Open Science |\n| latest | V03 successfully mirrored | `site/` → `/en/` | Version 03 (byte-identical to snapshot) |
+| edition index | Updated for 01, 02 and 03 | `site/t/index.html` → `/en/t/` | Clickable numbered cards |
 
 **V01 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42408262352. An initial V01 deployment succeeded on FTP but failed the HTTP check due to `curl | grep -q` closing early (SIGPIPE); the verification was fixed and rerun successfully. Never repeat this false-negative trap. **V02 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42409990074 (upload + all URL checks passed, 2026-11-07). Commit: `f79a9c7fddace292b734fbcc4448144c328e60a2`.
 
 ## Code design
 
-- Native ES modules, no framework dependency. 3D loaded from jsDelivr in `assets/app.js`; no internal API.
+- V01/V02 use separate `assets/app.js` and CSS. V03 (current) is a **single HTML** with embedded CSS, inline JS and fallback SVG; only optional Three.js is loaded from jsDelivr; no internal API.
 - 3D scene generated procedurally at runtime, not an architectural plan. Old versions self-contained in `site/t/NN/`.
-- `assets/city-dark.svg` and `assets/city-light.svg` are local procedurally generated isometric city fallback illustrations, usable even without WebGL/CDN.
+- V02 has separate `assets/city-dark.svg` and `assets/city-light.svg`; V03 embeds both redesigned fallbacks as inline SVG data, usable without WebGL/CDN.
 - V02 includes two track switch buttons (`cityTrack`, `theoryTrack`), a `themeToggle` (localStorage), `paceSelect` (fast/normal/slow), chronological chapter controls, modal research atlas and matrix.
 - The visual site is English. Explanatory source/reference docs can be bilingual but aim international clarity.
 - Light/dark styles are real design tokens and 3D color adjustments, not a global inversion.
@@ -53,7 +53,7 @@ Original project website `https://zistshahr.com/`, with focused five recent post
 
 ## Next-agent checklist
 
-Read AGENTS, source summaries, and current workflow status before editing. Create `site/t/03/` (never alter older) for any new requested revision; mirror latest into root `site/`, update `site/t/index.html`, run `node --check`, interactively validate both tracks, check mobile no-overflow, publish with GitHub Actions, inspect its steps/logs, and document truthful completion/limitations here.
+Read AGENTS, source summaries, and current workflow status before editing. Create `site/t/04/` (never alter older) for any new requested revision; mirror latest into root `site/`, update `site/t/index.html`, run `node --check`, interactively validate both tracks, check mobile no-overflow, publish with GitHub Actions, inspect its steps/logs, and document truthful completion/limitations here.
 
 ## V03 handoff — 2026-11-07
 - **Latest** `site/index.html` exactly mirrors immutable `site/t/03/index.html`, and `site/t/index.html` includes 01/02/03. Root FTPS path `./` serves `https://zistshahr.com/en/`.
