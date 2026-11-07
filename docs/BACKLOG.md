@@ -57,4 +57,4 @@ Status as of 2026-11-07. Each new release is immutable; never retrofit old snaps
 - [x] **Production V03 deployed and verified**: FTPS success and HTTP content checks passed on all five URLs, including `Research Edition 03`, embedded style and script markers. [Actions run 42412491145](https://github.com/motealle/zistshahr/actions/runs/42412491145), commit `4ad5d81f6f82c93bd036ad2aea6ae962687be63d`.
 - [ ] Test real Three.js scene on midrange Android and exhibition laptop with internet, including offline fallback; independent live root screenshot.
 - [ ] Confirm researcher review of concept land-area figure, original architecture and English translations; avoid suggesting implementation has occurred.
-- [ ] Archive complete original 9 MB `Presentation1.pptx` binary in GitHub if reliable binary-upload route exists; original is saved in Library and repository has a slide inventory.
+- [x] Full 9 MB original `Presentation1.pptx` content archived **losslessly in GitHub as eight restorable Base64 chunks** at `sources/original/Presentation1.pptx.b64parts/`; restoration verified against original SHA-256, with one-file original also preserved in ChatGPT Library.
