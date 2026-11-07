@@ -31,6 +31,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./ftp-test-20261107/
-          server-dir: ./ftp-test-20261107/
+          server-dir: ./
           state-name: .ftp-deploy-test-state.json
           dangerous-clean-slate: false
