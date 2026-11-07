@@ -1,0 +1,36 @@
+name: Verify zistshahr FTP deployment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ftp-test-20261107/**'
+      - '.github/workflows/ftp-connection-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zistshahr-ftp-test
+  cancel-in-progress: false
+
+jobs:
+  ftp-upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload isolated FTP test page (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./ftp-test-20261107/
+          server-dir: ./ftp-test-20261107/
+          state-name: .ftp-deploy-test-state.json
+          dangerous-clean-slate: false
