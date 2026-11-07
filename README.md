@@ -30,3 +30,6 @@ Use a static local server when the environment allows it (`python3 -m http.serve
 ## Exhibition integrity
 
 Prototypes are **research-based thought experiments**; any graphics, modeled districts and system concepts are illustrations, not proof of implementation or site-specific engineering feasibility. See `sources/README.md` for sources. Zistshahr's social-theory grid is a proposed normative/analytic framework, not a scientific consensus or exhaustive model of all societies.
+
+## Edition 03 — single-file garden city (2026-11-07)
+Latest `https://zistshahr.com/en/` mirrors immutable `site/t/03/index.html`; previous editions stay at `/en/t/01/`, `/en/t/02/` and archive at `/en/t/`. V03 embeds all CSS, JavaScript, and SVG visual fallback in its HTML to avoid stale asset mismatches at the root. Three.js and Google Fonts are optional enhancements. Garden residences: one-storey, green ~800 m² conceptual plots with pools/trees; a distinct white contemporary mosque at the center, **not a Taj Mahal replica**. City and Foundations tracks, light/dark, guided chapters and research atlas remain available. See `AGENTS.md`, `docs/HANDOFF.md`.

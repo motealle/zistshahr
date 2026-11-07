@@ -22,3 +22,14 @@ Read `README.md`, `docs/HANDOFF.md`, `docs/BACKLOG.md`, and `sources/README.md` 
 ## Version-independent source
 
 The canonical research snapshots are under `sources/original/`; web originals are tracked in `sources/README.md`. All site assets should work under both `/en/` and `/en/t/NN/` by using relative URLs. Do not rely solely on a CDN; provide local graceful fallbacks.
+
+## V03 and all subsequent agents — mandatory (2026-11-07)
+- **FTP root `./` = public `/en/`.** Never prepend `en/` in FTP paths or claim this FTP can modify the main domain root.
+- Every revision gets a new immutable `site/t/NN/index.html`; NEVER edit older numbered snapshots. The latest root `site/index.html` must be **byte-identical** to the newest numbered index. Update `site/t/index.html` numbered cards.
+- From V03, **one self-contained HTML per release**: inline CSS, JS, static SVG fallback; no `./assets/style.css` or `./assets/app.js` runtime dependencies. Optional version-pinned Three.js/CDN fonts must not be needed for functional navigation/content. CDN failures must show meaningful inline city art.
+- Context: Android Chrome screenshot showed broken/missing header styles on `/en/` whereas `/en/t/02/` did not; Git tracked root and V02 were identical. Suspected cache/resources mismatch, **not proven**; recheck Android after V03.
+- V03 model brief: single-storey houses on landscaped generous plots of approx. 800 m² **illustrative** only, mature trees, private pools, edible gardens; original, stunning modern white mosque at civic center with asymmetric towers and Islamic arches, explicitly NOT a copy of Taj Mahal. This is a conceptual image, not a surveyed approved masterplan.
+- Keep both research lenses City / Foundations, type-on narrative, dark/light theme, readable typography, research atlas and provenance. Label normative project proposals versus empirical data.
+- QA before publication: `node --check`, verify latest and snapshot same content; desktop 1440, mobile 390 and 360; no horizontal overflow; no header/story collisions; track switch, light/dark, open/close research, 8 chapters; screenshot both themes. On-site real-device WebGL and exhibition Wi-Fi test separately.
+- Publish exclusively via `.github/workflows/deploy-exhibition.yml` FTPS to `server-dir: ./`; require Actions success and HTTP content-marker checks on `/en/`, `/en/t/`, `/en/t/01/`, `/en/t/02/`, `/en/t/03/` and future editions. Avoid `curl | grep -q` SIGPIPE false negatives.
+- TinyFish is prohibited. Prefer low-token runs and precise repository state. Record commit SHA, run URL, limitations and next version in HANDOFF/BACKLOG.

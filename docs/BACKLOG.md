@@ -47,3 +47,14 @@ Status as of 2026-11-07. Each new release is immutable; never retrofit old snaps
 4. Programmatic check + visual review + interaction smoke test.
 5. Push to `main` and inspect `.github/workflows/deploy-exhibition.yml` run; confirm SFTP/FTPS success and each public URL.
 6. Note commit hash and exact Actions run in `docs/HANDOFF.md`.
+
+## V03 — responsive inline release / garden mosque (2026-11-07)
+- [x] Investigate root style discrepancy; root HTML and V02 snapshot identical in repo, cached external resource mismatch suspected but **not demonstrated**.
+- [x] Produce standalone V03 HTML (inline CSS+JS+SVG fallback); exact mirror to latest site root, immutable `/t/03/`.
+- [x] New concept landscape: spacious planted ~800 m² *illustrative* residential lots; one-floor houses, garden pools and trees; distinctive mosque with luminous white architecture, modern asymmetrical Islamic silhouette (not Taj copy).
+- [x] Interactive desktop and mobile fallback checks at 1440, 390 and 360 px; no overflow/header collision; 2 tracks, atlas, mode toggle, chapter controls.
+- [x] Include Open Science ideas from project-provided `دانش آزاد.docx`, index the 23-slide Beyond-Market Science deck; save both originals to ChatGPT Library.
+- [ ] Complete and validate **production V03 deployment** in GitHub Actions. Record exact run ID and finish only on verified success.
+- [ ] Test real Three.js scene on midrange Android and exhibition laptop with internet, including offline fallback; independent live root screenshot.
+- [ ] Confirm researcher review of concept land-area figure, original architecture and English translations; avoid suggesting implementation has occurred.
+- [ ] Archive complete original 9 MB `Presentation1.pptx` binary in GitHub if reliable binary-upload route exists; original is saved in Library and repository has a slide inventory.
