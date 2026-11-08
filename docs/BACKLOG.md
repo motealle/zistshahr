@@ -6,7 +6,7 @@ The atlas adds an English adaptation of the project team's Persian “دانش �
 
 Validation: byte-identical root and snapshot, edition index, required controls and module syntax. Standard MIDI format 0 checked. Chrome preview at 1440px and mobile 390×844 and 360×720. All 16 chapters tested at 360px without horizontal overflow or story/toolbar overlap. Both themes, scene cycling, soundtrack start/stop state, MIDI download target, contribution and knowledge jumps, close and focus return verified. Browser WebGL is disabled, so cinematic fallback was exercised. Rendered materials, orbit, zoom and on-device performance still need a WebGL-capable browser.
 
-Deployment recorded after verification.
+Deployment verified: release `4ef22bbe6a513c4841ba17179c08f04db9bf5b1e`, [Actions run 42448894835](https://github.com/motealle/zistshahr/actions/runs/42448894835). FTPS upload and HTTP checks passed for the English root, index and archives 01–06. All 18 entries in snapshots 01–05 match the previous Git tree by SHA. V06 was opened live and image switching and the support entry point were confirmed. The score parses to 184 notes over 36 seconds.
 
 ---
 
