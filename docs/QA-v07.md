@@ -6,4 +6,4 @@ Upload optional media to the English directory, beside its `index.html`, or put 
 
 Validation: script syntax, archive entry and byte-identical latest and snapshot. In Chrome, checked the 1920×1080 layout and all 16 chapters at 3840×2160 for vertical overlaps and horizontal overflow. Mobile 360/390 preview and representative chapter, theme, and atlas paths checked. Tested missing files, custom music precedence, MP4 playback availability, invalid MP4 falling back to MP3, and hidden absent language with temporary media fixtures. Five MP3s rendered and checked. Physical projection and sound reinforcement are separate on-site checks.
 
-Deployment verification pending.
+Deployment verified for release `879a6008e6c836192ae645bb0ca1cf1c1802d4b6` in [Actions run 42450539502](https://github.com/motealle/zistshahr/actions/runs/42450539502). FTPS and live HTTP checks passed for the English root and archives 01–07. All five live MP3s matched the published bytes. Browser playback was verified on the live listening page. The optional Turkish fixture played and paused the active soundtrack. The 20 entries in archive folders 01–06 matched the previous tree by SHA.
