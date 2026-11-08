@@ -14,15 +14,17 @@ A research-led, interactive exhibition website for **Zistshahr (زیست‌شه�
 
 - V05: https://zistshahr.com/en/t/05/
 
+- V06: https://zistshahr.com/en/t/06/
+
 ## Current edition
 
-V05 returns to the V02/V03 immersive direction. Cinematic conceptual artwork and Three.js r161 are embedded in the single HTML. 3D loads on request; the narrative remains usable without WebGL. See `docs/QA-v05.md` for tested flows and limitations.
+V06 builds on the approved V05 opening and adds concept scenes, animated birds, an original MIDI score and a dedicated Knowledge Beyond the Market chapter in the research atlas. See `docs/QA-v06.md` for validation, source attribution and the contribution configuration.
 
 ## Architecture
 
 Plain static HTML, CSS and JavaScript, no mandatory build step. Three.js is loaded as an ES module (`cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js`) and builds a procedural **conceptual**, not built, island of productive homes, water, streets, workshops, gardens and shared civic space. There is a self-contained local vector city fallback if the remote module or WebGL fails. Thin English type uses Manrope/DM Mono/Cormorant Garamond with system font fallbacks.
 
-- `site/index.html`: latest V05 **self-contained** edition, served at `/en/`; old assets in `site/assets/` remain for earlier versions but are not loaded by V05.
+- `site/index.html`: latest V06 **self-contained** edition, served at `/en/`; old assets in `site/assets/` remain for earlier versions but are not loaded by V06.
 - `site/t/01/`, `site/t/02/`, `site/t/03/`: immutable archives. V03 is one HTML file.
 - `site/t/index.html`: version-selector page.
 - `sources/original/`: original Word/Excel inputs plus `دانش آزاد.docx`; the larger original presentation is losslessly recoverable from eight archived Base64 parts in `sources/original/Presentation1.pptx.b64parts/` (and directly available as PPTX in Library).

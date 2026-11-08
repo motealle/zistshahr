@@ -27,3 +27,7 @@ THE SOFTWARE.
 ## Concept artwork
 
 Original AI-generated visualization for this release: productive garden homes, water gardens, and an original white contemporary mosque at blue hour. Not a photograph, built project, surveyed plan, or evidence of engineering performance. Converted to WebP for delivery.
+
+## Edition 06
+
+Adds two original generated architectural concepts (garden homes in morning light and the shared courtyard at sunset) compressed to WebP. First Light is an original 16-bar score in Standard MIDI format 0. 3D surface maps, light environment and bird silhouettes are generated locally.
