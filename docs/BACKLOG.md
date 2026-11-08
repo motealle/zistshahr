@@ -1,3 +1,13 @@
+# Edition 09 — GoFundMe donation option
+
+The donation panel now opens the user-provided GoFundMe campaign in a new tab, from a compact row above the four existing crypto options. The QR artwork, wallet addresses, and copy behavior were carried forward unchanged. The row appears via the home support button, the City finale, and the Research Atlas, or directly at `/en/#support`.
+
+Tested the 880px desktop modal and 360px/390px mobile sheets. Bitcoin selection and its QR were checked after adding the link. The short URL redirects to GoFundMe's Beyond Market Science campaign route; the checkout response was not verified from this environment.
+
+Deployment verification pending.
+
+---
+
 # Edition 08 — Support open research
 
 The home and final City chapter open the English crypto donation panel. The Research Atlas also offers a crypto donation button alongside the existing contact options. Share `/en/#support` to open the panel directly. It appears as a centered modal on desktop and a bottom sheet on narrow screens.
@@ -6,7 +16,7 @@ The four supplied destinations are presented as their respective mainnet native 
 
 Tested Chrome desktop and 360px/390px mobile frames. Verified one visible QR per network, matching full addresses, keyboard dismissal and focus return, and opening from the Atlas. The local HTTP preview verified selectable-address fallback when Clipboard API is unavailable.
 
-Deployment verification pending.
+Edition 08 deployment verified by Actions run 42458562620.
 
 ---
 

@@ -22,15 +22,17 @@ A research-led, interactive exhibition website for **Zistshahr (زیست‌شه�
 - V08: https://zistshahr.com/en/t/08/
 - Donate: https://zistshahr.com/en/#support
 
+- V09: https://zistshahr.com/en/t/09/
+
 ## Current edition
 
-V08 adds a responsive crypto donation panel with four validated addresses and scannable QR codes. See `docs/QA-v08.md`. V07 adds exhibition typography for large displays, a retouched courtyard concept image, original orchestral scores and detection of optional uploaded music and multilingual podcasts. See `docs/QA-v07.md` for upload names and validation.
+V09 adds a GoFundMe link alongside crypto donations. V08 adds a responsive crypto donation panel with four validated addresses and scannable QR codes. See `docs/QA-v08.md`. V07 adds exhibition typography for large displays, a retouched courtyard concept image, original orchestral scores and detection of optional uploaded music and multilingual podcasts. See `docs/QA-v07.md` for upload names and validation.
 
 ## Architecture
 
 Plain static HTML, CSS and JavaScript, no mandatory build step. Three.js is loaded as an ES module (`cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js`) and builds a procedural **conceptual**, not built, island of productive homes, water, streets, workshops, gardens and shared civic space. There is a self-contained local vector city fallback if the remote module or WebGL fails. Thin English type uses Manrope/DM Mono/Cormorant Garamond with system font fallbacks.
 
-- `site/index.html`: latest V08 **self-contained** edition, served at `/en/`; old assets in `site/assets/` remain for earlier versions but are not loaded by V08.
+- `site/index.html`: latest V09 **self-contained** edition, served at `/en/`; old assets in `site/assets/` remain for earlier versions but are not loaded by V09.
 - `site/t/01/`, `site/t/02/`, `site/t/03/`: immutable archives. V03 is one HTML file.
 - `site/t/index.html`: version-selector page.
 - `sources/original/`: original Word/Excel inputs plus `دانش آزاد.docx`; the larger original presentation is losslessly recoverable from eight archived Base64 parts in `sources/original/Presentation1.pptx.b64parts/` (and directly available as PPTX in Library).
