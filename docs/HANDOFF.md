@@ -1,3 +1,13 @@
+# Edition 05 — 2026-11-08
+
+User prefers V02/V03 over V04. V05 restores the full-screen immersive city, with original conceptual cinematic artwork, restrained typography, a two-track narrative and mobile composition. Root mirrors immutable t/05. V01–V04 remain unchanged.
+
+Three.js r161 is gzip-embedded and loaded only on request; no runtime CDN dependency for 3D. Cinematic view remains functional without WebGL. Orbit/zoom/reset controls are provided. Generated artwork is an artistic concept, not a built city or approved plan; the procedural model is a separate conceptual geometry. Both 8-chapter research tracks and the full atlas remain.
+
+Validation: release script passed mirror/archive/IDs/inline resources/JS syntax checks. Browser visual review at desktop and mobile frames 390×844 and 360×720, both themes; all 16 chapters exercised at 360px with no horizontal overflow. Atlas open/Escape verified. WebGL is disabled in the test browser: fallback verified, actual 3D rendering and hardware performance NOT verified. Real Android and exhibition Wi-Fi remain to test. Deployment status recorded below after Actions.
+
+---
+
 # Handoff — ZISTSHAHR Immersive English Site
 
 **Project owner/repository:** `motealle/zistshahr`, default branch `main`, repo URL https://github.com/motealle/zistshahr. **Host:** `zistshahr.com`; dedicated FTP account root is mapped to the website's **`/en`** path. Thus `.github/workflows/deploy-exhibition.yml` must upload `local-dir: ./site/` to `server-dir: ./` (never to `./en/`). Credentials are in GitHub Actions Secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
@@ -12,7 +22,8 @@ Reveal Zistshahr's English experience at a Turkey exhibition. Prioritize surpris
 |---|---|---|---|
 | **01** | Released & FTP/live URL verified | `site/t/01/` → `/en/t/01/` | 8 chapters, procedural 3D, interactive controls, research atlas, 5 recent article links |
 | **02** | Released & FTP/live URL checks verified | `site/t/02/` → `/en/t/02/` | Two 8-chapter tracks, theory matrix and quotations, dark/light, pace, improved atlas, local procedural SVG fallback, responsive refinements |
-| **03** | Released and FTPS/HTTP checks verified | `site/t/03/` → `/en/t/03/` | Single HTML, garden homes, contemporary central white mosque, embedded fallback, Open Science |\n| latest | V03 successfully mirrored | `site/` → `/en/` | Version 03 (byte-identical to snapshot) |
+| **03** | Released and FTPS/HTTP checks verified | `site/t/03/` → `/en/t/03/` | Single HTML, garden homes, contemporary central white mosque, embedded fallback, Open Science |
+| latest | V03 successfully mirrored | `site/` → `/en/` | Version 03 (byte-identical to snapshot) |
 | edition index | Updated for 01, 02 and 03 | `site/t/index.html` → `/en/t/` | Clickable numbered cards |
 
 **V01 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42408262352. An initial V01 deployment succeeded on FTP but failed the HTTP check due to `curl | grep -q` closing early (SIGPIPE); the verification was fixed and rerun successfully. Never repeat this false-negative trap. **V02 verified successful GitHub workflow:** https://github.com/motealle/zistshahr/actions/runs/42409990074 (upload + all URL checks passed, 2026-11-07). Commit: `f79a9c7fddace292b734fbcc4448144c328e60a2`.
