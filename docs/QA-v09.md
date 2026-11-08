@@ -4,4 +4,4 @@ The donation panel now opens the user-provided GoFundMe campaign in a new tab, f
 
 Tested the 880px desktop modal and 360px/390px mobile sheets. Bitcoin selection and its QR were checked after adding the link. The short URL redirects to GoFundMe's Beyond Market Science campaign route; the checkout response was not verified from this environment.
 
-Deployment verification pending.
+Edition 09 deployment verified: commit `cc5eaf050b995e1dd5073ff950e39909827dfcc8`, [Actions run 42494964186](https://github.com/motealle/zistshahr/actions/runs/42494964186). HTTP checks passed for the live English page and all archives. The GoFundMe link was observed in the live panel at `/en/#support`.
