@@ -31,3 +31,7 @@ Original AI-generated visualization for this release: productive garden homes, w
 ## Edition 06
 
 Adds two original generated architectural concepts (garden homes in morning light and the shared courtyard at sunset) compressed to WebP. First Light is an original 16-bar score in Standard MIDI format 0. 3D surface maps, light environment and bird silhouettes are generated locally.
+
+## Edition 07
+
+Courtyard concept imagery was retouched for dress. The five original MIDI compositions were rendered with FluidSynth 2.3.4 and [GeneralUser GS v2.0.3](https://github.com/mrbumpy409/GeneralUser-GS) by S. Christian Collins. Its [license](https://github.com/mrbumpy409/GeneralUser-GS/blob/main/documentation/LICENSE.txt) permits music creation and use of rendered recordings. The sound bank is not distributed with the site.

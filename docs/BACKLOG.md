@@ -1,3 +1,15 @@
+# Edition 07 — A City Rises
+
+Retouched the courtyard concept image so the women wear opaque Arab-style hijab and abayas. Edition 07 scales its narrative and controls for exhibition displays. It adds five original orchestral options rendered with FluidSynth and GeneralUser GS v2.0.3 by S. Christian Collins, licensed for music creation. The source bank is used only to render the MP3s. The listening page is at `/en/t/07/scores/`. Track 01 is the interim default pending the user's selection.
+
+Upload optional media to the English directory, beside its `index.html`, or put it in the repository's `site/` for deployment. `music.mp3` takes precedence after successful media validation. Without a usable custom track, the music button plays the edition's fallback. For each of `poden`, `podar` and `podturk`, a playable MP4 takes precedence over MP3. The language-specific player is shown only when its file is playable, after reloading the page. Starting a podcast pauses the soundtrack and vice versa. Files with a correct media type (or generic binary type) must also load metadata. For uploaded MP4 use H.264/AAC for wide browser compatibility. The numbered V07 page uses the same upload location.
+
+Validation: script syntax, archive entry and byte-identical latest and snapshot. In Chrome, checked the 1920×1080 layout and all 16 chapters at 3840×2160 for vertical overlaps and horizontal overflow. Mobile 360/390 preview and representative chapter, theme, and atlas paths checked. Tested missing files, custom music precedence, MP4 playback availability, invalid MP4 falling back to MP3, and hidden absent language with temporary media fixtures. Five MP3s rendered and checked. Physical projection and sound reinforcement are separate on-site checks.
+
+Deployment verification pending.
+
+---
+
 # Edition 06 — First Light
 
 V05 is the approved visual baseline. Edition 06 keeps its opening art and two eight-chapter tracks, adds two generated architectural concept scenes with slow push-ins, animated doves and swallows, and an original 1,633-byte Standard MIDI soundtrack. Three.js remains embedded and optional. Procedural plaster and water textures, a reflective sky environment, warmer window panels and a flying flock add detail to the model. Camera controls are collapsed by default.
@@ -6,7 +18,7 @@ The atlas adds an English adaptation of the project team's Persian “دانش �
 
 Validation: byte-identical root and snapshot, edition index, required controls and module syntax. Standard MIDI format 0 checked. Chrome preview at 1440px and mobile 390×844 and 360×720. All 16 chapters tested at 360px without horizontal overflow or story/toolbar overlap. Both themes, scene cycling, soundtrack start/stop state, MIDI download target, contribution and knowledge jumps, close and focus return verified. Browser WebGL is disabled, so cinematic fallback was exercised. Rendered materials, orbit, zoom and on-device performance still need a WebGL-capable browser.
 
-Deployment verified: release `4ef22bbe6a513c4841ba17179c08f04db9bf5b1e`, [Actions run 42448894835](https://github.com/motealle/zistshahr/actions/runs/42448894835). FTPS upload and HTTP checks passed for the English root, index and archives 01–06. All 18 entries in snapshots 01–05 match the previous Git tree by SHA. V06 was opened live and image switching and the support entry point were confirmed. The score parses to 184 notes over 36 seconds.
+Deployment recorded after verification.
 
 ---
 

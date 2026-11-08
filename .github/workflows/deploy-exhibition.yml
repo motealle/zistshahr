@@ -33,15 +33,23 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for address in 'https://zistshahr.com/en/' 'https://zistshahr.com/en/t/01/' 'https://zistshahr.com/en/t/02/' 'https://zistshahr.com/en/t/03/' 'https://zistshahr.com/en/t/04/' 'https://zistshahr.com/en/t/05/' 'https://zistshahr.com/en/t/06/' 'https://zistshahr.com/en/t/'; do
+          for address in 'https://zistshahr.com/en/' 'https://zistshahr.com/en/t/01/' 'https://zistshahr.com/en/t/02/' 'https://zistshahr.com/en/t/03/' 'https://zistshahr.com/en/t/04/' 'https://zistshahr.com/en/t/05/' 'https://zistshahr.com/en/t/06/' 'https://zistshahr.com/en/t/07/' 'https://zistshahr.com/en/t/'; do
             echo "Check $address"
             curl --retry 4 --retry-delay 5 --max-time 40 --fail --silent --show-error --location "$address" -o /tmp/zistshahr-response.html
             grep -qi 'ZISTSHAHR' /tmp/zistshahr-response.html
             case "$address" in
-              'https://zistshahr.com/en/'|'https://zistshahr.com/en/t/06/')
-                grep -Fq 'Research Edition 06' /tmp/zistshahr-response.html
+              'https://zistshahr.com/en/'|'https://zistshahr.com/en/t/07/')
+                grep -Fq 'Research Edition 07' /tmp/zistshahr-response.html
                 grep -Fq 'id="release-style"' /tmp/zistshahr-response.html
                 grep -Fq 'id="release-script"' /tmp/zistshahr-response.html
                 ;;
             esac
+          done
+          score_base='https://zistshahr.com/en/t/07/scores'
+          curl --fail --silent --show-error --max-time 40 "$score_base/" -o /tmp/zistshahr-scores.html
+          grep -Fq 'A City Rises' /tmp/zistshahr-scores.html
+          for local_track in site/t/07/scores/*.mp3; do
+            track="${local_track##*/}"
+            curl --fail --silent --show-error --max-time 40 "$score_base/$track" -o /tmp/zistshahr-score.mp3
+            cmp "$local_track" /tmp/zistshahr-score.mp3
           done
